@@ -14,11 +14,86 @@
 
 ### ER Diagram 
 
+![clg databasee](https://github.com/priyarajmohan777/DBMS/assets/119475942/2fee697b-247a-4c64-8160-0692f2b772a6)
 
 ### Relational model
+![clg relational model](https://github.com/priyarajmohan777/DBMS/assets/119475942/129f82e6-c412-432e-b12d-3032558a4044)
 
 
 ### SQL DDL Schema 
+CREATE TABLE Courses
+(
+  Course_code INT NOT NULL,
+  Name INT NOT NULL,
+  Slot_no INT NOT NULL,
+  PRIMARY KEY (Course_code),
+  UNIQUE (Slot_no)
+);
+
+CREATE TABLE Students
+(
+  First INT NOT NULL,
+  Middle INT NOT NULL,
+  Last INT NOT NULL,
+  Reg_No INT NOT NULL,
+  Email_id INT NOT NULL,
+  Phone_no INT NOT NULL,
+  Course_code INT NOT NULL,
+  DID INT NOT NULL,
+  PRIMARY KEY (Email_id, Course_code),
+  FOREIGN KEY (Course_code) REFERENCES Courses(Course_code),
+  FOREIGN KEY (DID) REFERENCES Department(DID),
+  UNIQUE (Reg_No),
+  UNIQUE (Phone_no)
+);
+
+CREATE TABLE Staffs
+(
+  Name INT NOT NULL,
+  Staff_id INT NOT NULL,
+  Salary INT NOT NULL,
+  Email_id INT NOT NULL,
+  Course_code INT NOT NULL,
+  DID INT NOT NULL,
+  PRIMARY KEY (Staff_id),
+  FOREIGN KEY (Email_id, Course_code) REFERENCES Students(Email_id, Course_code),
+  FOREIGN KEY (DID) REFERENCES Department(DID)
+);
+
+CREATE TABLE Administration
+(
+  Trasport INT NOT NULL,
+  AdminId INT NOT NULL,
+  Food INT NOT NULL,
+  Accounts INT NOT NULL,
+  Email_id INT NOT NULL,
+  PRIMARY KEY (Email_id),
+  FOREIGN KEY (Email_id) REFERENCES Students(Email_id)
+);
+
+CREATE TABLE Department
+(
+  DID INT NOT NULL,
+  Email_id INT NOT NULL,
+  PRIMARY KEY (DID),
+  FOREIGN KEY (Email_id) REFERENCES Administration(Email_id)
+);
+
+CREATE TABLE HOD
+(
+  DID INT NOT NULL,
+  PRIMARY KEY (DID),
+  FOREIGN KEY (DID) REFERENCES Department(DID)
+);
+
+CREATE TABLE Offers
+(
+  DID INT NOT NULL,
+  Course_code INT NOT NULL,
+  PRIMARY KEY (DID, Course_code),
+  FOREIGN KEY (DID) REFERENCES Department(DID),
+  FOREIGN KEY (Course_code) REFERENCES Courses(Course_code)
+);
 
 ## RESULT 
 <div align="justify">
