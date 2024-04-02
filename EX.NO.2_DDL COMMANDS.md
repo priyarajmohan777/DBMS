@@ -25,6 +25,7 @@ To create a student database and execute DDL queries using SQL.
 ### 1) Create a table student  and insert any two rows with the following fieds RegisterNumber,Name,Age,Address,Phone number
 
 ### SQL QUERY: 
+```
 CREATE TABLE student (
     RegisterNumber INT,
     Name VARCHAR(100),
@@ -32,24 +33,26 @@ CREATE TABLE student (
     Address VARCHAR(255),
     PhoneNumber INT
 );
-
+```
 ### OUTPUT:
 ![Screenshot 2024-03-20 110343](https://github.com/priyarajmohan777/DBMS/assets/119475942/52854c0e-57f0-4bc8-a45f-11e5929010f3)
 
 ### 2) Alter the above student table by adding another attribute department
 
 ### SQL QUERY: 
+```
 ALTER TABLE student
 ADD COLUMN department VARCHAR(100);
-
+```
 ### OUTPUT:
 ![Screenshot 2024-03-20 110343](https://github.com/priyarajmohan777/DBMS/assets/119475942/cd2e81ef-e5e4-41ba-a112-e18fc75c4470)
 
 ### 3) Rename the student table to mystudent
 
 ### SQL QUERY: 
+```
 ALTER table students rename to mystudent;
-
+```
 
 ### OUTPUT:
 ![image](https://github.com/priyarajmohan777/DBMS/assets/119475942/c39f3185-669d-49b6-a3bc-287d59324dfe)
@@ -57,16 +60,18 @@ ALTER table students rename to mystudent;
 ### 4) Delete the mystudent rows using truncate keyword
 
 ### SQL QUERY: 
+```
 TRUNCATE table mystudent;
-
+```
 ### OUTPUT:
 ![image](https://github.com/priyarajmohan777/DBMS/assets/119475942/055b2662-8efd-45b9-a194-347ad4ba34a9)
 
 ### 5) Drop the mystudent table
  
 ### SQL QUERY: 
+```
 DROP table mystudent;
-
+```
 ### OUTPUT:
 ![image](https://github.com/priyarajmohan777/DBMS/assets/119475942/101ced66-1947-4868-9763-0b83b38a01f4)
 
