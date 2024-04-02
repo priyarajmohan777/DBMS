@@ -21,6 +21,7 @@
 
 
 ### SQL DDL Schema 
+```
 CREATE TABLE Courses
 (
   Course_code INT NOT NULL,
@@ -94,7 +95,7 @@ CREATE TABLE Offers
   FOREIGN KEY (DID) REFERENCES Department(DID),
   FOREIGN KEY (Course_code) REFERENCES Courses(Course_code)
 );
-
+```
 ## RESULT 
 <div align="justify">
 Thus the ER diagram was drawn and relational diagram, SQL DDL staements are generated using ERD plus tool.
